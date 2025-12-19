@@ -1,0 +1,36 @@
+{
+	"dialogue": [
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Hey that was great ig"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "bee boop bo sked"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "you want more huh?"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Lets start then!"
+		}
+	]
+}

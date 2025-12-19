@@ -1,0 +1,36 @@
+{
+	"dialogue": [
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "bep boo boo?"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.05,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "shocked",
+			"text": "you want me to attack you?"
+		},
+		{
+			"sound": "",
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "excited",
+			"text": "be"
+		},
+		{
+			"sound": "Voices/voice_bloodiey",
+			"speed": 0.075,
+			"portrait": "bloodiey",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Allright just make sure you dodge the attacks"
+		}
+	]
+}
