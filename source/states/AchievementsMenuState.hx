@@ -149,6 +149,11 @@ class AchievementsMenuState extends MusicBeatState
 	override function update(elapsed:Float) {
 		if(!goingBack && options.length > 1)
 		{
+			if(controls.FULLSCREEN)
+			{
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+			}
 			var add:Int = 0;
 			if (controls.UI_LEFT_P) add = -1;
 			else if (controls.UI_RIGHT_P) add = 1;

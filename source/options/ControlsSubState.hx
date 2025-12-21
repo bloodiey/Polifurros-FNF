@@ -33,6 +33,8 @@ class ControlsSubState extends MusicBeatSubstate
 		[true, 'Accept', 'accept', 'Accept'],
 		[true, 'Back', 'back', 'Back'],
 		[true, 'Pause', 'pause', 'Pause'],
+		[true, 'Help', 'help', 'Help'],
+		[true, 'Full Screen', 'fullscreen', 'Full Screen'],
 		[false],
 		[false, 'VOLUME'],
 		[false, 'Mute', 'volume_mute', 'Volume Mute'],
@@ -271,6 +273,11 @@ class ControlsSubState extends MusicBeatSubstate
 	var timeForMoving:Float = 0.1;
 	override function update(elapsed:Float)
 	{
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
 		if(timeForMoving > 0) //Fix controller bug
 		{
 			timeForMoving = Math.max(0, timeForMoving - elapsed);

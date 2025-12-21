@@ -198,6 +198,11 @@ class LoadingState extends MusicBeatState
 	var transitioning:Bool = false;
 	override function update(elapsed:Float)
 	{
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
 		super.update(elapsed);
 		if (dontUpdate) return;
 

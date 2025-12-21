@@ -49,7 +49,11 @@ class ExtrasState extends MusicBeatState
 	}
 	override function update(elapsed):Void
 	{
-		
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}	
 		super.update(elapsed);
 	}
 	function createMenuItem()

@@ -1,5 +1,7 @@
 package states;
 
+import flixel.input.keyboard.FlxKey;
+import flixel.input.keyboard.FlxKeyboard;
 import flixel.math.FlxRandom;
 import flixel.FlxObject;
 import flixel.effects.FlxFlicker;
@@ -11,6 +13,16 @@ import backend.Paths;
 import backend.CoolUtil;
 // Style Handler :P
 import haxe.Json;
+// --- DOCUMENTATION ---
+#if windows
+import webview.WebView;
+#end
+import sys.thread.Thread;
+import flixel.ui.FlxButton;
+import flixel.FlxBasic;
+import flixel.graphics.FlxGraphic;
+import flash.geom.Rectangle;
+import lime.utils.Assets;
 
 enum MainMenuColumn {
 	LEFT;
@@ -28,7 +40,9 @@ class MainMenuState extends MusicBeatState
 	public static var curSelected:Int = 0;
 	public static var curColumn:MainMenuColumn = CENTER;
 	var allowMouse:Bool = true; //Turn this off to block mouse movement in menus
-	
+	private var head:FlxText;
+	private var body:FlxText;
+	private var spinning:FlxSprite;
 	 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	var leftItem:FlxSprite;
@@ -116,17 +130,22 @@ class MainMenuState extends MusicBeatState
 
 		for (num => option in optionShit)
 		{
-			var item:FlxSprite = createMenuItem(option, 0, (num * 80) + 90);
-			item.y += (6 - optionShit.length) * 20; // Offsets for when you have anything other than 4 items
-			item.screenCenter(X);
+			var item:FlxSprite = createMenuItem(option, FlxG.width / 64 , (num * 80) + 90);
+			item.y += (6 - optionShit.length) * 20 - 40; // Offsets for when you have anything other than 4 items
+			//item.x = FlxG.width / 2 - item.width / 2;
 		}
 
-		if (leftOption != null)
-			leftItem = createMenuItem(leftOption, 60, 490);
+		if (leftOption != null){
+			leftItem = createMenuItem(leftOption, 20, 510);
+			leftItem.scale.y = 0.5;
+			leftItem.scale.x = 0.5;
+		}
 		if (rightOption != null)
 		{
-			rightItem = createMenuItem(rightOption, FlxG.width - 60, 490);
-			rightItem.x -= rightItem.width;
+			rightItem = createMenuItem(rightOption, 220, 510);
+			//rightItem.x -= rightItem.width;
+			rightItem.scale.y = 0.5;
+			rightItem.scale.x = 0.5;
 		}
 
 		var psychVer:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
@@ -137,10 +156,10 @@ class MainMenuState extends MusicBeatState
 		fnfVer.scrollFactor.set();
 		fnfVer.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(fnfVer);
-		var messageoftheday:FlxText = new FlxText(12,32, 0, "Message of the day:\n" + MOTDText, 24);
+		var messageoftheday:FlxText = new FlxText(FlxG.width - 256,0, 0, "Message of the day:\n" + MOTDText, 12);
 		messageoftheday.scrollFactor.set();
 		messageoftheday.setFormat("Segoe UI Emoji", 24, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		messageoftheday.antialiasing = true;
+		messageoftheday.antialiasing = ClientPrefs.data.antialiasing;
 		add(messageoftheday);
 		changeItem();
 
@@ -181,9 +200,11 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('idle',"button-idle");
 			menuItem.animation.addByPrefix('selected',"button-select");
 		}
-		var MenuText:FlxText = new FlxText(x , y+12);
-		MenuText.setFormat("Segoe UI Symbol", 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		MenuText.antialiasing = true;
+		var MenuText:FlxText = new FlxText(x+16,y- menuItem.height/2 + 24);
+		MenuText.setFormat("Segoe UI Symbol", 24, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		MenuText.height = menuItem.height;
+		MenuText.width = menuItem.width;
+		MenuText.antialiasing = ClientPrefs.data.antialiasing;
 		switch(name){
 			default:
 					MenuText.text = name; 
@@ -192,7 +213,7 @@ class MainMenuState extends MusicBeatState
 				case 'freeplay':
 					MenuText.text = "Freeplay";
 				case 'mods':
-					MenuText.text = "Mods";
+					MenuText.text = "Mods & Content";
 				case 'achievements':
 					MenuText.text = "";
 				case 'credits':
@@ -200,28 +221,26 @@ class MainMenuState extends MusicBeatState
 				case 'options':
 					MenuText.text = "";
 				case 'blog':
-					MenuText.text = "Blog";
+					MenuText.text = "Social Media";
 				case 'donate':
 					MenuText.text = "Donate";
 				case 'dlcs' :
-					MenuText.text = "Downloadable Content";
+					MenuText.text = "Community Packs";
 				case 'extras' :
 					MenuText.text = "Extra Content";
 				case 'password':
 					MenuText.text = "Password";
 				case 'exit':
-					MenuText.text = "Exit";
+					MenuText.text = "Exit Game";
 		}
 		
 		menuItem.animation.play('idle');
 		menuItem.updateHitbox();
-		
-		menuItem.antialiasing = ClientPrefs.data.antialiasing;
 		menuItem.scrollFactor.set();
 		MenuText.scrollFactor.set();
 		MenuText.antialiasing = ClientPrefs.data.antialiasing;
 		MenuText.centerOrigin();
-		MenuText.screenCenter(X);
+		//MenuText.screenCenter(X);
 		menuItems.add(menuItem);
 		add(MenuText);
 		return menuItem;
@@ -234,7 +253,7 @@ class MainMenuState extends MusicBeatState
 	{
 		if (FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume = Math.min(FlxG.sound.music.volume + 0.5 * elapsed, 0.8);
-
+		
 		if (!selectedSomethin)
 		{
 			if (controls.UI_UP_P)
@@ -348,7 +367,49 @@ class MainMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
+			if(controls.FULLSCREEN)
+			{
+				FlxG.sound.play(Paths.sound('confirmMenu'));
+				FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+			}
+			if(controls.HELP)
+			{
+				#if windows
+				var docsText:String = Assets.getText(Paths.getSharedPath("docs/mainHelp.htm"));
+				trace(docsText);
+				Thread.createWithEventLoop(() ->
+				{
+					var Viewer:WebView = new WebView(#if debug true #end);
 
+					Viewer.setTitle("FNF Polifurros Help");
+					Viewer.setSize(320, 240, 0);
+					Viewer.setHTML(docsText);
+					Application.current.onExit.add((_) ->
+					{
+						Viewer.terminate();
+						Viewer.destroy();
+					});
+
+					// Little note, you have to run the webview thread in order to work with binds and more stuff, basic operations like
+					// navigating to a webpage should work without the need to create a thread
+					// but if you want to manipulate variables from the main thread you will need to
+					// create a thread and run the webview thread inside of it to avoid "Critical Error: Allocating from a GC-free thread"
+					// also this approach isn't working correctly at all since it freezes after a couple of seconds
+
+					Viewer.bind("callOnGame", (seq, req, arg) ->
+					{
+						var args:Array<String> = req.substring(1, req.length - 1).split(",");
+						body.text = formatString(args[0]);
+
+						Viewer.resolve(seq, 0, "");
+					}, null);
+
+					Viewer.run();
+				});
+				#else
+				CoolUtil.browserLoad(Paths.docs('mainHelp'));
+				#end
+			}
 			if (controls.ACCEPT || (FlxG.mouse.justPressed && allowMouse))
 			{
 				FlxG.sound.play(Paths.sound('confirmMenu'));
@@ -445,7 +506,10 @@ class MainMenuState extends MusicBeatState
 
 		super.update(elapsed);
 	}
-
+	private function formatString(s:String):String
+	{
+		return s.substring(1, s.length - 1);
+	}
 	function changeItem(change:Int = 0)
 	{
 		if(change != 0) curColumn = CENTER;

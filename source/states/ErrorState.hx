@@ -19,6 +19,11 @@ class ErrorState extends MusicBeatState
 	public var errorText:FlxText;
 	override function create()
 	{
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
 		var bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = FlxColor.GRAY;
 		bg.antialiasing = ClientPrefs.data.antialiasing;

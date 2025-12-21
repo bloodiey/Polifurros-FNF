@@ -191,6 +191,11 @@ class PauseSubState extends MusicBeatSubstate
 	var cantUnpause:Float = 0.1;
 	override function update(elapsed:Float)
 	{
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
 		cantUnpause -= elapsed;
 		if (pauseMusic.volume < 0.5)
 			pauseMusic.volume += 0.01 * elapsed;

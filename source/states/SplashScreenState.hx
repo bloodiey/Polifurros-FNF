@@ -78,6 +78,7 @@ class SplashScreenState extends MusicBeatState
     private var luaDebugGroup:FlxTypedGroup<psychlua.DebugLuaText>;
     public var traceText = Paths.txt('traceArt');
     public var bloodieyHtml:String;
+    public var timer:haxe.Timer;
     override public function create():Void
     {
         var game = new PlayState();
@@ -109,9 +110,9 @@ class SplashScreenState extends MusicBeatState
         */
         ClientPrefs.loadPrefs();
         #if VIDEOS_ALLOWED
-        var timer = new haxe.Timer(7000); //Set duration to seconds 1000 = 1s
+        timer = new haxe.Timer(27000); //Set duration to seconds 1000 = 1s
         #else
-        var timer = new haxe.Timer(5000);
+        timer = new haxe.Timer(5000);
         #end
         var haddone = 0;
         splashscreen.loadGraphic(Paths.image("bloodieysart"));
@@ -131,7 +132,7 @@ class SplashScreenState extends MusicBeatState
        
         //playSplashAnim("intro");
         #if VIDEOS_ALLOWED
-            playSplashAnim('bloodieysart',false);  
+            var god = playSplashAnim('bloodieysart',false);  
         #else
             trace("Doing Tween");
             FlxG.sound.play(Paths.sound("bloodieysart"));
@@ -149,6 +150,18 @@ class SplashScreenState extends MusicBeatState
         
         trace("Video ended");
         
+        god.onSkip = function() 
+        {
+            trace("Video skipped");
+            if(haddone == 0)
+            {
+                haddone = 1;
+                timer.stop();
+                MusicBeatState.switchState(new TitleState());
+            }
+            
+        }
+
         timer.run = function() 
          {
             if(haddone == 0)
@@ -191,6 +204,24 @@ class SplashScreenState extends MusicBeatState
         return null;
     }
     public var videoCutscene:OpenVideoSprite = null;
+    override public function update(elapsed:Float):Void
+    {
+        if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
+        super.update(elapsed);
+        /*
+        if (videoCutscene != null)
+        {
+            if (videoCutscene.videoSprite.finished)
+            {
+                MusicBeatState.switchState(new TitleState());
+            }
+        }
+        */
+    }
     public function playSplashAnim(name:String, forMidSong:Bool = false, canSkip:Bool = true, loop:Bool = false, playOnLoad:Bool = true)
         {
             #if VIDEOS_ALLOWED
@@ -205,17 +236,18 @@ class SplashScreenState extends MusicBeatState
             if (OpenFlAssets.exists(fileName))
             #end
             foundFile = true;
-    
+
             if (foundFile)
             {
                 videoCutscene = new OpenVideoSprite(fileName, forMidSong, canSkip, loop);
-    
+                
                 // Finish callback
                
                 add(videoCutscene);
     
                 if (playOnLoad)
                     videoCutscene.videoSprite.play();
+                
                 return videoCutscene;
             }
             #if (LUA_ALLOWED || HSCRIPT_ALLOWED)

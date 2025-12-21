@@ -180,7 +180,8 @@ class Paths
 
 	inline static public function txt(key:String, ?folder:String)
 		return getPath('data/$key.txt', TEXT, folder, true);
-
+	inline static public function docs(key:String, ?folder:String)
+		return getPath('docs/$key.htm', TEXT, folder, true);
 	inline static public function xml(key:String, ?folder:String)
 		return getPath('data/$key.xml', TEXT, folder, true);
 

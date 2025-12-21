@@ -41,10 +41,9 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			['Vs Bloodiey Main Team'],
-			['Bloodiey',		'bloodiey',		'Main Programmer, Charter, composer, and Head of Vs Bloodiey mod',					 'https://bsky.app/profile/bloodiey.bsky.social',		'00ccfe'],
-			['Modisc',		'themodisc',		'Creator of the Bloodiey Chromatic',					 		'https://x.com/The_Modisc',		'ff8b00'],
-			['Tonyx',		'tonyx',		'Helper With Gamebanana Stuff',					 'https://www.youtube.com/channel/UCPyHCUMlsFmtutsdAfb_BIA',		'#0009ff'],
+			['Polifurros Team'],
+			['Bloodiey',		'bloodiey',		'Main Programmer, Charter and composer',					 'https://bsky.app/profile/bloodiey.bsky.social',		'00ccfe'],
+			['Starlightpuppy',		'starlightpuppy',		'Callisto',					 'https://www.youtube.com/@starlightpuppyy/videos',		'#B800FF'],
 			["Psych Engine Team"],
 			["Shadow Mario",		"shadowmario",		"Main Programmer and Head of Psych Engine",					"https://ko-fi.com/shadowmario",	"444444"],
 			["Riveren",				"riveren",			"Main Artist/Animator of Psych Engine",						"https://x.com/riverennn",			"14967B"],
@@ -141,6 +140,11 @@ class CreditsState extends MusicBeatState
 	var holdTime:Float = 0;
 	override function update(elapsed:Float)
 	{
+		if(controls.FULLSCREEN)
+		{
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			FlxG.stage.application.window.fullscreen = !FlxG.stage.application.window.fullscreen;
+		}
 		if (FlxG.sound.music.volume < 0.7)
 		{
 			FlxG.sound.music.volume += 0.5 * elapsed;

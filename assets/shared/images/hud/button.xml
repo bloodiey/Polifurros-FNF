@@ -1,5 +1,17 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="button.png">
-<SubTexture name="button-idle0000" x="0" y="81" width="1347" height="79" frameX="0" frameY="0" frameWidth="1347" frameHeight="79" />
-<SubTexture name="button-select0000" x="0" y="0" width="1349" height="81" frameX="0" frameY="0" frameWidth="1349" frameHeight="81" />
+	<!-- Created with Adobe Animate version 24.0.12.3 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="button-idle0000" x="2" y="2" width="410" height="84"/>
+	<SubTexture name="button-selected0000" x="414" y="2" width="407" height="81"/>
+	<SubTexture name="button-selected0001" x="2" y="88" width="407" height="81"/>
+	<SubTexture name="button-selected0002" x="411" y="88" width="407" height="81"/>
+	<SubTexture name="button-selected0003" x="2" y="171" width="407" height="81"/>
+	<SubTexture name="button-selected0004" x="411" y="171" width="407" height="81"/>
+	<SubTexture name="button-selected0005" x="2" y="254" width="407" height="81"/>
+	<SubTexture name="button-selected0006" x="411" y="254" width="407" height="81"/>
+	<SubTexture name="button-selected0007" x="2" y="337" width="407" height="81"/>
+	<SubTexture name="button-selected0008" x="411" y="337" width="407" height="81"/>
+	<SubTexture name="button-selected0009" x="2" y="420" width="407" height="81"/>
+	<SubTexture name="button-selected0010" x="411" y="420" width="407" height="81"/>
 </TextureAtlas>
