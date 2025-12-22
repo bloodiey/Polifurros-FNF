@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Callisto_Assets_Normal.png">
+	<!-- Created with Adobe Animate version 24.0.12.3 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Callie_Base0000" x="806" y="1681" width="351" height="556" frameX="-49" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0001" x="806" y="564" width="386" height="556" frameX="-14" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0002" x="4" y="564" width="400" height="556"/>
+	<SubTexture name="Callie_Base0003" x="430" y="4" width="390" height="556" frameX="-10" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0004" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0005" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0006" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0007" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0008" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0009" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0010" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0011" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0012" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Base0013" x="381" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Down0000" x="1161" y="1681" width="359" height="518" frameX="-49" frameY="-38" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0001" x="771" y="2803" width="394" height="518" frameX="-14" frameY="-38" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0002" x="4" y="1124" width="400" height="555" frameX="0" frameY="-1" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0003" x="408" y="1124" width="390" height="555" frameX="-10" frameY="-1" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0004" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0005" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0006" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0007" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0008" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0009" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0010" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0011" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0012" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Down0013" x="397" y="2800" width="370" height="556" frameX="-30" frameY="0" frameWidth="408" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0000" x="409" y="2243" width="358" height="529" frameX="-49" frameY="-27" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0001" x="1206" y="4" width="393" height="529" frameX="-14" frameY="-27" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0002" x="4" y="2243" width="401" height="553" frameX="0" frameY="-3" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0003" x="802" y="1124" width="391" height="553" frameX="-10" frameY="-3" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0004" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0005" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0006" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0007" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0008" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0009" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0010" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0011" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0012" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Idle0013" x="755" y="3360" width="370" height="556" frameX="-30" frameY="0" frameWidth="407" frameHeight="556"/>
+	<SubTexture name="Callie_Left0000" x="1145" y="2241" width="338" height="556" frameX="-49" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0001" x="4" y="3360" width="373" height="556" frameX="-14" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0002" x="4" y="1683" width="399" height="556" frameX="0" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0003" x="4" y="2800" width="389" height="556" frameX="-10" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0004" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0005" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0006" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0007" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0008" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0009" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0010" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0011" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0012" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Left0013" x="771" y="2243" width="370" height="556" frameX="-30" frameY="0" frameWidth="400" frameHeight="556"/>
+	<SubTexture name="Callie_Right0000" x="1196" y="564" width="377" height="556" frameX="-68" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0001" x="4" y="4" width="422" height="556" frameX="-23" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0002" x="407" y="1683" width="395" height="556" frameX="0" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0003" x="408" y="564" width="394" height="556" frameX="-1" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0004" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0005" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0006" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0007" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0008" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0009" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0010" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0011" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0012" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Right0013" x="824" y="4" width="378" height="556" frameX="-14" frameY="0" frameWidth="445" frameHeight="556"/>
+	<SubTexture name="Callie_Up0000" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0001" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0002" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0003" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0004" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0005" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0006" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0007" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0008" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0009" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0010" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0011" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0012" x="1129" y="3325" width="275" height="556"/>
+	<SubTexture name="Callie_Up0013" x="1129" y="3325" width="275" height="556"/>
+</TextureAtlas>
